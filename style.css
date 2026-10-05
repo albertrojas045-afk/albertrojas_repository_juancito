@@ -1,0 +1,508 @@
+/* ==========================================================================
+   VARIABLES Y TEMAS (Minecraft Style)
+   ========================================================================== */
+:root {
+  --font-pixel: 'Press Start 2P', monospace;
+  --font-retro: 'VT323', monospace;
+  --font-code: 'Fira Code', monospace;
+
+  /* Modo Oscuro (Por defecto: Obsidian & Redstone) */
+  --bg-primary: #121417;
+  --bg-secondary: #1a1e24;
+  --surface: #22272e;
+  --border-light: #444c56;
+  --border-dark: #0d1117;
+  --text-main: #e6edf3;
+  --text-muted: #8b949e;
+  --primary-color: #2ea043;
+  --accent-redstone: #ff2a2a;
+  --accent-glow: rgba(255, 42, 42, 0.4);
+  --cable-color: rgba(0, 255, 200, 0.3);
+  --packet-color: #00ffcc;
+  --card-crack-filter: invert(1);
+}
+
+[data-theme="light"] {
+  /* Modo Claro (Grass & Day Light) */
+  --bg-primary: #e8ecf1;
+  --bg-secondary: #d5dce5;
+  --surface: #ffffff;
+  --border-light: #ffffff;
+  --border-dark: #7d8590;
+  --text-main: #1f2328;
+  --text-muted: #656d76;
+  --primary-color: #2da44e;
+  --accent-redstone: #d71a1a;
+  --accent-glow: rgba(215, 26, 26, 0.3);
+  --cable-color: rgba(20, 80, 160, 0.25);
+  --packet-color: #0969da;
+  --card-crack-filter: none;
+}
+
+/* ==========================================================================
+   RESET & ESTILOS GLOBALES
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-code);
+  overflow-x: hidden;
+  position: relative;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Lienzo de Fondo de Red */
+#network-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   TIPOGRAFÍAS Y TÍTULOS
+   ========================================================================== */
+h1, h2, h3, h4, .mc-brand, .mc-btn, .mc-badge, .mc-tier {
+  font-family: var(--font-pixel);
+  letter-spacing: -1px;
+}
+
+.mc-title {
+  font-size: clamp(1.4rem, 4vw, 2.5rem);
+  line-height: 1.4;
+  text-shadow: 4px 4px 0 #000;
+}
+
+.highlight {
+  color: #00ffcc;
+  text-shadow: 3px 3px 0 #005f4d;
+}
+
+[data-theme="light"] .highlight {
+  color: #0550ae;
+  text-shadow: 2px 2px 0 #9ec5fe;
+}
+
+.mc-section-title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.4);
+}
+
+.mc-text {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+.mc-text-sm {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   NAVBAR FLOTANTE
+   ========================================================================== */
+.mc-floating-nav {
+  margin: 15px auto;
+  width: calc(100% - 30px);
+  max-width: 1200px;
+  background: var(--surface);
+  border: 4px solid var(--border-dark);
+  box-shadow: inset -4px -4px 0px rgba(0, 0, 0, 0.4),
+              inset 4px 4px 0px var(--border-light),
+              0px 8px 16px rgba(0,0,0,0.4);
+  padding: 8px 16px;
+  image-rendering: pixelated;
+  z-index: 1000;
+}
+
+.mc-brand {
+  font-size: 1rem;
+  color: var(--text-main);
+  text-decoration: none;
+}
+
+.mc-nav-link {
+  font-family: var(--font-pixel);
+  font-size: 0.75rem;
+  color: var(--text-main) !important;
+  margin: 0 8px;
+  transition: transform 0.1s;
+}
+
+.mc-nav-link:hover {
+  transform: scale(1.1);
+  color: #00ffcc !important;
+}
+
+/* ==========================================================================
+   BOTONES ESTILO MINECRAFT
+   ========================================================================== */
+.mc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  padding: 12px 18px;
+  text-transform: uppercase;
+  border-radius: 0;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  border: 3px solid #000;
+  box-shadow: inset -3px -3px 0px #373737, inset 3px 3px 0px #ffffff;
+  transition: active 0.05s, transform 0.1s;
+}
+
+.mc-btn:active {
+  box-shadow: inset 3px 3px 0px #373737, inset -3px -3px 0px #ffffff;
+  transform: translate(2px, 2px);
+}
+
+.mc-btn-primary {
+  background: #5b8731;
+  color: #fff !important;
+}
+.mc-btn-primary:hover {
+  background: #6fa63c;
+}
+
+.mc-btn-secondary {
+  background: #4a525d;
+  color: #fff !important;
+}
+.mc-btn-secondary:hover {
+  background: #5d6774;
+}
+
+.mc-btn-sm {
+  padding: 6px 12px;
+  font-size: 0.65rem;
+  background: #2b313a;
+  color: #fff !important;
+}
+
+.mc-badge {
+  background: #000;
+  border: 2px solid #555;
+  padding: 6px 12px;
+  font-size: 0.65rem;
+  color: #00ffcc;
+  box-shadow: 2px 2px 0 #000;
+}
+
+/* ==========================================================================
+   HERO & AVATAR
+   ========================================================================== */
+.mc-avatar-frame {
+  background: var(--surface);
+  border: 6px solid #000;
+  padding: 12px;
+  box-shadow: inset -4px -4px 0 #333, inset 4px 4px 0 #aaa, 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.mc-avatar {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border: 4px solid #000;
+  image-rendering: pixelated;
+}
+
+.mc-hp-bar .heart {
+  color: #ff2222;
+  font-size: 1.2rem;
+  margin-right: 2px;
+  filter: drop-shadow(2px 2px 0px #000);
+}
+
+.xp-text {
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+  color: #55ff55;
+  text-shadow: 1px 1px 0 #000;
+}
+
+/* ==========================================================================
+   STACK: TARJETAS CON EFECTO DE ROTURA DE BLOQUE MINECRAFT
+   ========================================================================== */
+.mc-block-card {
+  position: relative;
+  background: var(--surface);
+  border: 4px solid #000;
+  box-shadow: inset -4px -4px 0px rgba(0,0,0,0.5), inset 4px 4px 0px rgba(255,255,255,0.2);
+  padding: 24px;
+  min-height: 230px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.mc-block-card:hover {
+  transform: translateY(-5px);
+}
+
+.mc-block-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.mc-block-inner h4 {
+  font-size: 0.95rem;
+  margin: 10px 0;
+}
+
+.mc-block-inner p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.mc-tier {
+  display: inline-block;
+  font-size: 0.6rem;
+  padding: 3px 6px;
+  background: #000;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+/* Efecto rotura con SVG animado */
+.mc-crack-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: var(--card-crack-filter);
+  transition: opacity 0.1s ease;
+}
+
+/* 
+  Simulación progresiva de las fases de rotura de bloque al hacer hover.
+  Utiliza una máscara SVG de fracturas vectoriales pixeladas.
+*/
+.mc-block-card:hover .mc-crack-overlay {
+  opacity: 0.85;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M10,0 L20,30 L10,50 L40,40 L60,70 L50,100 M60,0 L50,30 L80,50 L70,80 L100,90 M30,50 L70,50 M0,80 L30,70 L40,100" fill="none" stroke="black" stroke-width="4" stroke-linecap="square"/></svg>');
+  animation: crackProgression 1.2s steps(4) infinite alternate;
+}
+
+@keyframes crackProgression {
+  0% {
+    transform: scale(0.9);
+    filter: contrast(100%);
+  }
+  50% {
+    transform: scale(1.05) rotate(1deg);
+    filter: contrast(180%);
+  }
+  100% {
+    transform: scale(1.15) rotate(-1deg);
+    filter: contrast(300%);
+  }
+}
+
+/* ==========================================================================
+   PROYECTOS & FILTROS
+   ========================================================================== */
+.mc-btn-filter {
+  background: var(--surface);
+  color: var(--text-main);
+  border: 3px solid #000;
+  font-size: 0.7rem;
+  padding: 8px 14px;
+}
+
+.mc-btn-filter.active, .mc-btn-filter:hover {
+  background: #34495e;
+  color: #00ffcc;
+  box-shadow: inset -2px -2px 0 #000, inset 2px 2px 0 #fff;
+}
+
+.mc-project-box {
+  background: var(--surface);
+  border: 4px solid #000;
+  box-shadow: inset -4px -4px 0 rgba(0,0,0,0.5), inset 4px 4px 0 rgba(255,255,255,0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 16px;
+  transition: transform 0.2s;
+}
+
+.mc-project-box:hover {
+  transform: translateY(-4px);
+}
+
+.mc-box-title {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.mc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 15px 0;
+}
+
+.mc-tags span {
+  font-size: 0.65rem;
+  padding: 3px 6px;
+  background: #111;
+  color: #00ffcc;
+  border: 1px solid #333;
+}
+
+.mc-box-footer {
+  margin-top: auto;
+  display: flex;
+  gap: 8px;
+}
+
+/* ==========================================================================
+   CHAT / CONTACTO
+   ========================================================================== */
+.mc-chat-box {
+  max-width: 600px;
+  background: rgba(0, 0, 0, 0.75);
+  border: 4px solid #555;
+  box-shadow: 6px 6px 0 #000;
+  padding: 20px;
+  text-align: left;
+}
+
+.mc-chat-header {
+  font-family: var(--font-pixel);
+  font-size: 0.75rem;
+  color: #ffaa00;
+  margin-bottom: 12px;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.mc-footer {
+  background: var(--surface);
+  border-top: 4px solid #000;
+}
+
+.mc-social-link {
+  color: var(--text-main);
+  text-decoration: none;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.mc-social-link:hover {
+  color: #00ffcc;
+  transform: scale(1.2);
+}
+
+/* ==========================================================================
+   BOTÓN MODO OSCURO/CLARO (BLOQUE MINECRAFT + CURSOR PALA)
+   ========================================================================== */
+.theme-block-wrapper {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999;
+}
+
+/* 
+  Cursor personalizado con forma de Pala de Minecraft (SVG embebido)
+  Aparece ÚNICAMENTE cuando el mouse entra en el botón.
+*/
+.theme-block-wrapper:hover,
+.mc-block-btn:hover {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M22,2 L28,8 L24,12 L20,8 Z" fill="%2355FFFF" stroke="%23000" stroke-width="1.5"/><path d="M20,8 L10,18 L8,16 L18,6 Z" fill="%238B5A2B" stroke="%23000" stroke-width="1.5"/><path d="M10,18 L4,24 L4,28 L8,28 L14,22 Z" fill="%238B5A2B" stroke="%23000" stroke-width="1.5"/></svg>') 4 4, pointer !important;
+}
+
+.mc-block-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  outline: none;
+  perspective: 600px;
+}
+
+/* Cubo 3D Isométrico Estilo Bloque */
+.mc-cube {
+  width: 52px;
+  height: 52px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(-25deg) rotateY(-35deg);
+  transition: transform 0.3s ease, filter 0.3s;
+}
+
+.mc-block-btn:hover .mc-cube {
+  transform: rotateX(-25deg) rotateY(145deg) scale(1.1);
+}
+
+.face {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  border: 2px solid #000;
+  image-rendering: pixelated;
+}
+
+/* En Modo Oscuro: Bloque de Lámpara de Redstone / Obsidiana */
+[data-theme="dark"] .face.top {
+  background: #b53838;
+  box-shadow: inset 0 0 10px #ff0000;
+  transform: rotateX(90deg) translateZ(26px);
+}
+[data-theme="dark"] .face.left {
+  background: #7d1c1c;
+  transform: rotateY(-90deg) translateZ(26px);
+}
+[data-theme="dark"] .face.right {
+  background: #540e0e;
+  transform: translateZ(26px);
+}
+
+/* En Modo Claro: Bloque de Césped (Grass Block) */
+[data-theme="light"] .face.top {
+  background: #5b8731;
+  transform: rotateX(90deg) translateZ(26px);
+}
+[data-theme="light"] .face.left {
+  background: #866043;
+  border-top: 10px solid #4c7228;
+  transform: rotateY(-90deg) translateZ(26px);
+}
+[data-theme="light"] .face.right {
+  background: #6a492f;
+  border-top: 10px solid #3c5d1e;
+  transform: translateZ(26px);
+}
+
+/* ==========================================================================
+   RESPONSIVIDAD
+   ========================================================================== */
+@media (max-width: 768px) {
+  .mc-floating-nav {
+    width: 95%;
+    margin: 10px auto;
+  }
+  .mc-avatar {
+    width: 200px;
+    height: 200px;
+  }
+  .theme-block-wrapper {
+    bottom: 15px;
+    right: 15px;
+  }
+}

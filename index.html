@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Albert Rojas| Full-Stack & AI Engineer</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" />
+  <!-- Google Fonts: Estilo Minecraft y texto legible -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- CSS Personalizado -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Fondo interactivo: Cables de Red y Tráfico de Datos -->
+  <canvas id="network-canvas"></canvas>
+
+  <!-- Navbar Flotante Estilo Minecraft -->
+  <nav class="navbar navbar-expand-lg mc-floating-nav fixed-top">
+    <div class="container-fluid px-3">
+      <a class="navbar-brand mc-brand" href="#hero">
+        <i class="bi bi-cpu-fill text-danger me-2"></i>A ROJAS.DEV
+      </a>
+      <button class="navbar-toggler mc-btn-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mcNavbar">
+        <span class="bi bi-list fs-2 text-white"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mcNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+          <li class="nav-item"><a class="nav-link mc-nav-link" href="#hero">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link mc-nav-link" href="#stack">Stack</a></li>
+          <li class="nav-item"><a class="nav-link mc-nav-link" href="#projects">Proyectos</a></li>
+          <li class="nav-item ms-lg-2">
+            <a class="btn mc-btn mc-btn-primary btn-sm" href="#contact">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sección Hero -->
+  <section id="hero" class="d-flex align-items-center min-vh-100 position-relative pt-5">
+    <div class="container py-5">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7 text-center text-lg-start">
+          <div class="mc-badge mb-3 d-inline-block">Nivel 99: Full-Stack & AI Engineer</div>
+          <h1 class="mc-title mb-3">CONSTRUYENDO EL <span class="highlight">FUTURO DIGITAL</span> BLOQUE A BLOQUE</h1>
+          <p class="mc-text lead mb-4">
+            Especializado en ciberseguridad con master en IA y analisis de datos, soluciones efectivas y optimas
+            y cada vez mejores como el gobierno dominicano
+          </p>
+          <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+            <a href="#projects" class="btn mc-btn mc-btn-primary">Ver Proyectos</a>
+            <a href="#contact" class="btn mc-btn mc-btn-secondary">Invocar Servidor</a>
+          </div>
+        </div>
+        <div class="col-lg-5 text-center">
+          <div class="mc-avatar-frame d-inline-block">
+            <!-- Avatar pixelado con temática de Minecraft / Ingeniero -->
+            <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?auto=format&fit=crop&w=500&q=80" 
+                 alt="Foto de Perfil" class="img-fluid mc-avatar" />
+            <div class="mc-hp-bar mt-3">
+              <span class="heart bi bi-heart-fill"> </span>
+              <span class="heart bi bi-heart-fill"></span>
+              <span class="heart bi bi-heart-fill"></span>
+              <span class="heart bi bi-heart-fill"></span>
+              <span class="heart bi bi-heart-fill"></span>
+               <span class="xp-text ms-2">XP: 9999+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Stack Tecnológico con Efecto de Romper Bloque -->
+  <section id="stack" class="py-5 position-relative">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <h2 class="mc-section-title">INVENTARIO TÉCNICO</h2>
+        <p class="mc-text">Pasa el cursor sobre los bloques para minar y descubrir la tecnología</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Bloque 1 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="mc-block-card mc-card-diamond">
+            <div class="mc-block-inner">
+              <i class="bi bi-robot fs-1 text-info mb-2"></i>
+              <h4>Modelos de IA</h4>
+              <p>PyTorch, TensorFlow, Transformers, LangChain, RAG.</p>
+              <span class="mc-tier">Nivel: Diamante</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloque 2 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="mc-block-card mc-card-redstone">
+       
+            <div class="mc-block-inner">
+              <i class="bi bi-cpu fs-1 text-danger mb-2"></i>
+              <h4>Backend & Red</h4>
+              <p>Node.js, FastAPI, Go, GraphQL, WebSockets, Kafka.</p>
+              <span class="mc-tier">Nivel: Redstone</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloque 3 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="mc-block-card mc-card-emerald">
+         
+            <div class="mc-block-inner">
+              <i class="bi bi-layers-fill fs-1 text-success mb-2"></i>
+              <h4>Frontend</h4>
+              <p>React, Next.js, Vue, Bootstrap, TypeScript, Tailwind.</p>
+              <span class="mc-tier">Nivel: Esmeralda</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloque 4 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="mc-block-card mc-card-gold">
+         
+            <div class="mc-block-inner">
+              <i class="bi bi-hdd-network fs-1 text-warning mb-2"></i>
+              <h4>Cloud & DevOps</h4>
+              <p>Docker, Kubernetes, AWS, CI/CD Pipelines, PostgreSQL.</p>
+              <span class="mc-tier">Nivel: Oro</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Proyectos con Filtros Interactivos -->
+  <section id="projects" class="py-5 position-relative">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <h2 class="mc-section-title">CHUNKS DE PROYECTOS</h2>
+        <p class="mc-text">Filtrar por categoría de despliegue</p>
+        
+        <!-- Filtros -->
+        <div class="d-flex flex-wrap justify-content-center gap-2 mt-4" id="project-filters">
+          <button class="btn mc-btn mc-btn-filter active" data-filter="all">TODOS</button>
+          <button class="btn mc-btn mc-btn-filter" data-filter="ai">IA & LLM</button>
+          <button class="btn mc-btn mc-btn-filter" data-filter="fullstack">FULL-STACK</button>
+          <button class="btn mc-btn mc-btn-filter" data-filter="cloud">REDES / CLOUD</button>
+        </div>
+      </div>
+
+      <div class="row g-4" id="projects-grid">
+        <!-- Proyecto 1 -->
+        <div class="col-md-6 col-lg-4 project-item" data-category="ai">
+          <div class="mc-project-box">
+            <div class="mc-box-header">
+              <span class="badge bg-danger">IA & LLM</span>
+            </div>
+            <div class="mc-box-body">
+              <h3 class="mc-box-title">Agente Autónomo RAG</h3>
+              <p class="mc-text-sm">Sistema multi-agente con orquestación de embeddings y búsqueda vectorial para ingesta masiva de PDFs.</p>
+              <div class="mc-tags">
+                <span>FastAPI</span>
+                <span>LangChain</span>
+                <span>Qdrant</span>
+              </div>
+            </div>
+            <div class="mc-box-footer">
+              <a href="#" class="btn mc-btn-sm"><i class="bi bi-github"></i> Código</a>
+              <a href="#" class="btn mc-btn-sm"><i class="bi bi-link-45deg"></i> Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyecto 2 -->
+        <div class="col-md-6 col-lg-4 project-item" data-category="fullstack">
+          <div class="mc-project-box">
+            <div class="mc-box-header">
+              <span class="badge bg-success">FULL-STACK</span>
+            </div>
+            <div class="mc-box-body">
+              <h3 class="mc-box-title">Nexus ERP Modular</h3>
+              <p class="mc-text-sm">Plataforma SaaS con sincronización en tiempo real vía WebSockets y control de inventarios distribuidos.</p>
+              <div class="mc-tags">
+                <span>Next.js</span>
+                <span>NestJS</span>
+                <span>PostgreSQL</span>
+              </div>
+            </div>
+            <div class="mc-box-footer">
+              <a href="#" class="btn mc-btn-sm"><i class="bi bi-github"></i> Código</a>
+              <a href="#" class="btn mc-btn-sm"><i class="bi bi-link-45deg"></i> Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyecto 3 -->
+        <div class="col-md-6 col-lg-4 project-item" data-category="cloud">
+          <div class="mc-project-box">
+            <div class="mc-box-header">
+              <span class="badge bg-warning text-dark">REDES / CLOUD</span>
+            </div>
+            <div class="mc-box-body">
+              <h3 class="mc-box-title">Mesh Network Monitor</h3>
+              <p class="mc-text-sm">Monitor de telemetría de paquetes con simulación de enrutamiento y detección de anomalías con IA en el Edge.</p>
+              <div class="mc-tags">
+                <span>Go</span>
+                <span>Docker</span>
+                <span>Prometheus</span>
+              </div>
+            </div>
+            <div class="mc-box-footer">
+              <a href="#" class="btn mc-btn-sm"><i class="bi bi-github"></i> Código</a>
+              <a href="#" class="btn mc-btn-sm"><i class="bi bi-link-45deg"></i> Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyecto 4 -->
+        <div class="col-md-6 col-lg-4 project-item" data-category="ai">
+          <div class="mc-project-box">
+            <div class="mc-box-header">
+              <span class="badge bg-danger">IA & LLM</span>
+            </div>
+            <div class="mc-box-body">
+              <h3 class="mc-box-title">Vision Net Classifier</h3>
+              <p class="mc-text-sm">Segmentación de imágenes satelitales en tiempo real optimizada con ONNX Runtime y TensorRT.</p>
+              <div class="mc-tags">
+                <span>PyTorch</span>
+                <span>CUDA</span>
+                <span>React</span>
+              </div>
+            </div>
+            <div class="mc-box-footer">
+              <a href="#" class="btn mc-btn-sm"><i class="bi bi-github"></i> Código</a>
+              <a href="#" class="btn mc-btn-sm"><i class="bi bi-link-45deg"></i> Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyecto 5 -->
+        <div class="col-md-6 col-lg-4 project-item" data-category="fullstack">
+          <div class="mc-project-box">
+            <div class="mc-box-header">
+              <span class="badge bg-success">FULL-STACK</span>
+            </div>
+            <div class="mc-box-body">
+              <h3 class="mc-box-title">Crypto Block Tracker</h3>
+              <p class="mc-text-sm">Explorador de bloques y eventos de smart contracts con procesamiento de streams Kafka en alta concurrencia.</p>
+              <div class="mc-tags">
+                <span>Node.js</span>
+                <span>Redis</span>
+                <span>Tailwind</span>
+              </div>
+            </div>
+            <div class="mc-box-footer">
+              <a href="#" class="btn mc-btn-sm"><i class="bi bi-github"></i> Código</a>
+              <a href="#" class="btn mc-btn-sm"><i class="bi bi-link-45deg"></i> Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyecto 6 -->
+        <div class="col-md-6 col-lg-4 project-item" data-category="cloud">
+          <div class="mc-project-box">
+            <div class="mc-box-header">
+              <span class="badge bg-warning text-dark">REDES / CLOUD</span>
+            </div>
+            <div class="mc-box-body">
+              <h3 class="mc-box-title">K8s Auto-Scaler Bot</h3>
+              <p class="mc-text-sm">Controlador en Kubernetes que escala pods predictivamente analizando tráfico con modelos LSTM.</p>
+              <div class="mc-tags">
+                <span>Kubernetes</span>
+                <span>Python</span>
+                <span>gRPC</span>
+              </div>
+            </div>
+            <div class="mc-box-footer">
+              <a href="#" class="btn mc-btn-sm"><i class="bi bi-github"></i> Código</a>
+              <a href="#" class="btn mc-btn-sm"><i class="bi bi-link-45deg"></i> Demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Contacto -->
+  <section id="contact" class="py-5 text-center">
+    <div class="container py-4">
+      <div class="mc-chat-box mx-auto">
+        <div class="mc-chat-header">&lt;SERVER CHAT / CONTACTO&gt;</div>
+        <div class="mc-chat-body">
+          <p class="mc-text">[Servidor] &iexcl;Establece conexión TCP con Albert Rojas!</p>
+          <a href="mailto:alex@ejemplo.com" class="btn mc-btn mc-btn-primary mt-3">
+            <i class="bi bi-envelope-paper-fill me-2"></i>Enviar Paquete (Email)
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer con Redes Sociales y Volver Arriba -->
+  <footer class="mc-footer py-4 mt-5">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+      <div class="mc-text-sm">
+        Crafted by <strong>Albert Rojas</strong> &copy; 2026. Todos los bloques reservados.
+      </div>
+      <div class="d-flex gap-3 fs-4">
+        <a href="#" class="mc-social-link"><i class="bi bi-github"></i></a>
+        <a href="#" class="mc-social-link"><i class="bi bi-linkedin"></i></a>
+        <a href="#" class="mc-social-link"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" class="mc-social-link"><i class="bi bi-discord"></i></a>
+      </div>
+      <button id="btn-back-to-top" class="btn mc-btn mc-btn-sm" title="Volver al inicio">
+        <i class="bi bi-arrow-up-square-fill me-1"></i> ARRIBA
+      </button>
+    </div>
+  </footer>
+
+  <!-- Botón Selector de Tema Flotante (Bloque Minecraft con Cursor Pala) -->
+  <div class="theme-block-wrapper" title="Minar para cambiar Modo Claro / Oscuro">
+    <button id="theme-toggle" class="mc-block-btn" aria-label="Cambiar tema">
+      <div class="mc-cube">
+        <div class="face top"></div>
+        <div class="face left"></div>
+        <div class="face right"></div>
+      </div>
+    </button>
+  </div>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JS Personalizado -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -212,7 +212,7 @@ h1, h2, h3, h4, .mc-brand, .mc-btn, .mc-badge, .mc-tier {
 
 .mc-avatar {
   width: 260px;
-  height: 260px;
+  height: 340spx;
   object-fit: cover;
   border: 4px solid #000;
   image-rendering: pixelated;
